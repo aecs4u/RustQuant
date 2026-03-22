@@ -9,6 +9,7 @@ crate-type = ["cdylib"]
 path = "rust/lib.rs"
 
 [dependencies]
-RustQuant = {path = "../crates/RustQuant"}
+RustQuant = { path = "../crates/RustQuant" }
 pyo3 = { workspace = true }
 time = { workspace = true }
+nalgebra = { workspace = true }
