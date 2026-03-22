@@ -4,14 +4,39 @@ build-backend = "maturin"
 
 [project]
 name = "RustQuant"
-dynamic = ["version"]
-requires-python = ">=3.8"
+version = "0.4.0"
+description = "Python bindings for the RustQuant quantitative finance library."
+requires-python = ">=3.9"
+license = { text = "MIT OR Apache-2.0" }
+authors = [{ name = "avhz", email = "RustQuantContact@gmail.com" }]
+readme = "README.md"
+keywords = ["quantitative", "finance", "option-pricing", "monte-carlo", "stochastic"]
 classifiers = [
+    "Development Status :: 3 - Alpha",
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.urls]
+Repository = "https://github.com/avhz/RustQuant"
+Documentation = "https://docs.rs/RustQuant"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "maturin>=1.9,<2.0",
 ]
 
 [tool.maturin]
 python-source = "python"
 features = ["pyo3/extension-module"]
+module-name = "RustQuant"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.uv]
+package = true

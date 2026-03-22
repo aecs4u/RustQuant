@@ -9,3 +9,5 @@ Modules:
     ml          - Machine learning (linear/logistic regression)
     math        - Numerical integration and sequences
 """
+
+from RustQuant.RustQuant import *  # noqa: F401, F403
